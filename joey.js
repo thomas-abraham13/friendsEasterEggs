@@ -2,6 +2,13 @@
 
 const puppeteer = require('puppeteer');
 
+//JavaScript delay function example
+function delay(time) {
+	return new Promise(function(resolve) {
+		setTimeout(resolve, time)
+	});
+}
+
 (async () => {
 	const browser = await puppeteer.launch({ headless: false, defaultViewport: { width: 1920, height: 1080 }, args: ['--start-maximized'] });
 	const page = await browser.newPage();
@@ -19,10 +26,4 @@ const puppeteer = require('puppeteer');
 
 	await browser.close();
 
-	//JavaScript delay function example
-	function delay(time) {
-		return new Promise(function(resolve) {
-			setTimeout(resolve, time)
-		});
-	}
 })();
