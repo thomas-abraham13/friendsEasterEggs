@@ -5,10 +5,10 @@ The main purpose of this project was to gain a basic understanding of puppeteer 
 - The .js scripts are all identical and use puppeteer which is a high-level API to control Chrome/Chromium over the DevTools Protocol. Puppeteer runs in headless mode by default, but can be configured to run in full ("headful") Chrome/Chromium.
 
 ## Execution:
-Clone the repo and run the following command in the `main` folder:
-`node <name>.js`
+Clone the repo and execute the following file:
+`index.sh`
 
-e.g. `node joey.js`
+e.g. `./index.sh or sh index.sh`
 
 ## Output:
 ![image](https://github.com/thomas-abraham13/friendsEasterEggs/assets/29597130/1c6be2bf-36b3-4adb-acb8-edfe2c228303)
