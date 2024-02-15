@@ -27,7 +27,7 @@ function delay(time) {
 
 	console.log("Waiting for 5 seconds");
 	await delay(5000);
-	console.log("Waiting for 5 seconds : SUCCESS");
+	console.log("Waiting for 5 seconds : SUCCESS\n");
 
 	await browser.close();
 
