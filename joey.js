@@ -2,7 +2,7 @@
 
 const puppeteer = require('puppeteer');
 
-//JavaScript delay function example
+// JavaScript delay function example
 function delay(time) {
 	return new Promise(function(resolve) {
 		setTimeout(resolve, time)
@@ -13,12 +13,17 @@ function delay(time) {
 	const browser = await puppeteer.launch({ headless: false, defaultViewport: { width: 1920, height: 1080 }, args: ['--start-maximized'] });
 	const page = await browser.newPage();
 	let element, formElement, tabs;
-	
-	//Navigate to Joey Tribiani on Google
+
+	// Navigate to Joey Tribbiani on Google
 	await page.goto(`https://www.google.com/search?q=joey+tribbiani`, { waitUntil: 'networkidle0' });
 
-	element = await page.$x(`//div[@id='rcnt']/div[2]/div/div/div[3]/div/div/div/div/div/div/div/canvas`);
-	await element[0].click();
+    // Click Accept on the Google Popup (Before you continue....)
+    let accept = `#L2AGLb > div`;
+    await page.click(accept);
+
+    // Click the pizza icon to initiate the easter egg
+	let cb = `#rcnt > div.XqFnDf > div > div > div.wPNfjb > div > div.hHq9Z > div > div > div.qlJdOe > div > div > div:nth-child(1) > canvas`;
+	await page.click(cb);
 
 	console.log("Waiting for 5 seconds");
 	await delay(5000);
