@@ -1,7 +1,25 @@
 {
+  "name": "friendseastereggs",
+  "version": "1.0.0",
+  "description": "puppeteer scripts to navigate to each individual member of the friends cast on Google and display their hidden easter egg",
+  "main": "index.sh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas-abraham13/friendsEasterEggs.git"
+  },
+  "keywords": [
+    "puppeteer"
+  ],
+  "author": "Thomas Abraham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomas-abraham13/friendsEasterEggs/issues"
+  },
+  "homepage": "https://github.com/thomas-abraham13/friendsEasterEggs#readme",
   "dependencies": {
-    "puppeteer": "^21.6.1",
-    "puppeteer-web": "^0.0.3",
-    "type":"module"
+    "puppeteer": "^22.0.0"
   }
 }
