@@ -1,3 +1,4 @@
+/* Reset styles */
 html,
 body,
 div,
@@ -77,42 +78,10 @@ video,
   background: transparent;
 }
 
-body {
-  line-height: 1;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-nav ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-a {
+/* Common styles */
+a,
+input,
+select {
   margin: 0;
   padding: 0;
   font-size: 100%;
@@ -120,19 +89,21 @@ a {
   background: transparent;
 }
 
-/* change colours to suit your needs */
-ins {
-  background-color: #ff9;
-  color: #000;
+/* Links */
+a {
+  color: #111;
   text-decoration: none;
 }
 
-/* change colours to suit your needs */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Text formatting */
+ins,
 mark {
   background-color: #ff9;
   color: #000;
-  font-style: italic;
-  font-weight: bold;
 }
 
 del {
@@ -145,37 +116,23 @@ dfn[title] {
   cursor: help;
 }
 
+/* Tables */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* change border colour to suit your needs */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #cccccc;
-  margin: 1em 0;
-  padding: 0;
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
 }
 
-input,
-select {
-  vertical-align: middle;
-}
-
-/*Additions*/
-
-* {
-  text-decoration: none;
-  list-style-type: none;
-}
-
-main {
-  padding-top: 100px;
-}
-
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -184,33 +141,28 @@ header {
   background-color: white;
   width: 100%;
   height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header .brand {
   font-size: 24px;
   color: #111;
   font-weight: 900;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px 0px;
   font-family: "Roboto Mono", monospace;
 }
 
-header > nav > ul {
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
+header nav ul {
+  display: flex;
+  list-style: none;
 }
 
-header > nav > ul > li {
-  display: inline-block;
-  float: left;
-  padding: 0px 16px;
-  text-align: center;
+header nav ul li {
+  margin: 0 16px;
 }
 
-header > nav > ul > li > a {
+header nav ul li a {
   font-size: 16px;
   color: #111;
   text-transform: uppercase;
@@ -218,110 +170,93 @@ header > nav > ul > li > a {
   font-weight: 600;
 }
 
-@media only screen and (min-width: 1000px) {
-  header .brand {
-    margin: 31px 0px;
-    text-align: left;
-    line-height: 38px;
-    padding: 0px 20px 0px 40px;
-    border-right: solid 2px #111;
-    float: left;
-  }
-
-  header > nav > ul {
-    display: block;
-    margin: 20px 0px 0px 20px;
-    float: left;
-  }
-
-  header > nav > ul > li {
-    display: inline-block;
-    float: left;
-    padding: 0px 16px;
-    text-align: center;
-  }
-
-  header > nav > ul > li > a {
-    font-size: 16px;
-    color: #111;
-    line-height: 60px;
-    text-transform: uppercase;
-  }
-}
-
+/* Banner */
 .index-banner {
-  width: 100%;
   height: calc(100vh - 100px);
-  /* background-image:url("https://media3.giphy.com/media/BHNfhgU63qrks/giphy.gif");  */
   background-image: url("https://media.giphy.com/media/ftrKLbppIyfkK7HgWA/giphy.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.index-banner h2,
+.index-banner h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  font-family: "Karla", sans-serif;
 }
 
 .index-banner h2 {
   font-size: 60px;
-  color: #fff;
-  text-align: center;
-  font-weight: 900;
   line-height: 70px;
   text-shadow: 2px 2px #111;
-  font-family: "Karla", sans-serif;
 }
 
 .index-banner h1 {
   font-size: 28px;
-  color: #fff;
-  text-align: center;
-  font-weight: 900;
   line-height: 40px;
   font-style: italic;
   text-shadow: 1px 1px #111;
   font-family: "Indie Flower", cursive;
 }
 
-.vertical-center {
-  display: table-cell;
-  vertical-align: middle;
+/* Footer */
+footer {
+  width: calc(100% - 80px);
+  padding: 40px;
+  background-color: #111;
+  margin-top: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.index-links div {
-  margin: 16px 16px 0;
-  width: calc(100% - 32px);
-  height: 100px;
-  background-color: #f2f2f2;
-  border-left: 1px solid black;
+footer ul {
+  list-style: none;
 }
 
-.index-links div h3 {
-  font-size: 20px;
-  color: #111;
-  text-align: center;
-  font-weight: 300;
-  line-height: 100px;
+footer ul li a {
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  text-transform: uppercase;
+}
 
-  font-family: "Inconsolata", monospace;
+.footer-sm {
+  width: 60px;
+}
+
+.footer-sm img {
+  width: 50px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 1000px) {
-  .wrapper {
-    width: 1000px;
-    margin: 0 auto;
+  header .brand {
+    margin: 31px 0;
+    text-align: left;
+    line-height: 38px;
+    padding-left: 40px;
+    border-right: solid 2px #111;
+  }
+
+  header nav ul {
+    margin-left: 20px;
+  }
+
+  header nav ul li a {
+    font-size: 16px;
+    line-height: 60px;
   }
 
   .index-banner {
     height: 525px;
-  }
-
-  .error-banner {
-    height: 725px;
-  }
-
-  .index-banner h1 {
-    display: block;
-    width: 560px;
-    margin: 0 auto;
   }
 
   .index-links {
@@ -334,141 +269,30 @@ header > nav > ul > li > a {
     background-color: #f2f2f2;
     float: left;
   }
+
   .index-box-square {
     width: calc(25% - 20px) !important;
   }
+
   .index-box-rectangle {
     width: calc(50% - 20px) !important;
   }
+
   .index-links div h3 {
     line-height: 230px;
   }
-}
 
-#square1 {
-  border-left-color: hotpink;
-}
-
-#square2 {
-  border-left-color: hotpink;
-}
-
-#square3 {
-  border-left-color: hotpink;
-}
-
-/*About Me*/
-.skills {
-  font-size: 14px;
-  color: #111;
-  letter-spacing: 2px;
-  font-family: "Inconsolata", monospace;
-}
-
-.summary {
-  font-size: 16px;
-  color: #111;
-  letter-spacing: 2px;
-  font-family: "Inconsolata", monospace;
-}
-
-.contact {
-  font-size: 16px;
-  color: #111;
-  font-weight: 800;
-  letter-spacing: 2px;
-  font-family: "Inconsolata", monospace;
-}
-
-.column{
-	width: 1000;
-	background-color: #fff;
-	margin-top: 20px;
-}
-
-.about-header {
-  font-size: 18px;
-  color: #111;
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-family: "Karla", sans-serif;
-  text-decoration: underline;
-  display: inline;
-}
-
-.sub-header {
-  font-size: 16px;
-  color: #111;
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-family: "Karla", sans-serif;
-}
-
-.sub2-header {
-  font-size: 15px;
-  color: #111;
-  font-weight: 550;
-  letter-spacing: 2px;
-  font-family: "Karla", sans-serif;
-  text-decoration: underline;
-}
-
-.sub3-header {
-  font-size: 14px;
-  color: #111;
-  font-weight: 500;
-  letter-spacing: 2px;
-  font-family: "Karla", sans-serif;
-}
-
-/*footer*/
-footer {
-  width: calc(100%- 80px);
-  padding: 40px 40px;
-  background-color: #111;
-  margin-top: 20px;
-  overflow: hidden;
-}
-
-footer ul {
-  width: fit-content;
-  float: left;
-  padding-left: 20px;
-}
-
-footer ul li {
-  display: block;
-  list-style: none;
-}
-
-footer ul li a {
-  font-size: 14px;
-  color: #fff;
-  line-height: 40px;
-}
-.footer-sm {
-  width: 60px;
-  float: right;
-}
-
-.footer-sm img {
-  width: 50px;
-  margin-bottom: 10px;
-}
-
-@media only screen and (min-width: 1000px) {
-  footer ul li a {
-    font-size: 20px;
-    color: #fff;
-    line-height: 40px;
-    text-transform: uppercase;
-  }
   footer ul {
     padding-right: 30px;
   }
+
+  footer ul li a {
+    font-size: 20px;
+    line-height: 40px;
+  }
 }
 
- /* Popup container */
+/* Popup */
 .popup {
   position: relative;
   display: inline-block;
@@ -479,14 +303,12 @@ footer ul li a {
   font-family: "Inconsolata", monospace;
 }
 
-/* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
-  width: 750px; /* Width of the bottom dock */
+  width: 750px;
   background-color: #555;
   text-align: center;
   border-radius: 10px;
-
   position: absolute;
   z-index: 1;
   bottom: 125%;
@@ -494,7 +316,6 @@ footer ul li a {
   margin-left: -80px;
 }
 
-/* Popup arrow */
 .popup .popuptext::after {
   content: "";
   position: absolute;
@@ -506,20 +327,12 @@ footer ul li a {
   border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
   visibility: visible;
-  -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
 }
 
 @keyframes fadeIn {
   from {opacity: 0;}
-  to {opacity:1 ;}
-} 
+  to {opacity: 1;}
+}

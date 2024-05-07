@@ -1,80 +1,51 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1XQHL8VF4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V1XQHL8VF4');
-</script>
-
-	<title>Friends Easter Eggs</title>
-	<link rel="icon" type="chandler-icon" href="chandler.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="design.css?1422585377">
-	<link
-		href="https://fonts.googleapis.com/css?family=Abel|Inconsolata|Indie+Flower|Karla|Open+Sans+Condensed:300|Roboto+Mono|ZCOOL+KuaiLe&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Easter Eggs</title>
+    <link rel="icon" href="chandler.png">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Inconsolata|Indie+Flower|Karla|Open+Sans+Condensed:300|Roboto+Mono|ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Karla', sans-serif; }
+        header { background-color: white; height: 100px; padding: 20px 0; }
+        .brand { font-size: 24px; font-weight: 900; color: #111; text-decoration: none; }
+        nav ul { margin: 0; }
+        nav ul li { display: inline-block; margin-right: 20px; }
+        nav ul li a { font-size: 16px; color: #111; text-transform: uppercase; text-decoration: none; }
+        main { padding-top: 100px; text-align: center; }
+        .index-banner { background-image: url("https://media.giphy.com/media/ftrKLbppIyfkK7HgWA/giphy.gif"); background-repeat: no-repeat; background-size: cover; height: calc(100vh - 100px); display: flex; justify-content: center; align-items: center; }
+        .index-banner h2 { font-size: 60px; color: #fff; font-weight: 900; text-shadow: 2px 2px #111; font-family: 'Karla', sans-serif; }
+        .index-links { display: flex; justify-content: center; margin-top: 20px; }
+        .index-box-square { width: 200px; height: 200px; background-color: #f2f2f2; margin: 0 10px; display: flex; justify-content: center; align-items: center; border-radius: 10px; }
+        .index-box-square h3 { font-size: 20px; color: #111; }
+    </style>
 </head>
-
 <body>
-	<header>
-		<a href="index.html" class="brand">Friends (1994)</a>
-		<nav>
-			<ul>
-				<li><a href="index.html" class="animated flash">Easter Eggs using Puppeteer</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<section id="index-banner" class="index-banner">
-			<div class="vertical-center">
-				<h2 class="animated swing">Click Below to View Scripts</h2>
-			</div>
-		</section>
-		<div class="wrapper">
-			<section class="index-links">
-				<a href="joey.js">
-					<div class="index-box-square animated fadeIn">
-						<h3>Joey</h3>
-					</div>
-				</a>
-				<a href="chandler.js">
-					<div class="index-box-square animated fadeIn">
-						<h3>Chandler</h3>
-					</div>
-				</a>
-				<a href="ross.js">
-					<div class="index-box-square animated fadeIn">
-						<h3>Ross</h3>
-					</div>
-				</a>
-        <a href="rachel.js">
-					<div class="index-box-square animated fadeIn">
-						<h3>Rachel</h3>
-					</div>
-				</a>
-        <a href="monica.js">
-					<div class="index-box-square animated fadeIn">
-						<h3>Monica</h3>
-					</div>
-				</a>
-        <a href="phoebe.js">
-					<div class="index-box-square animated fadeIn">
-						<h3>Phoebe</h3>
-					</div>
-				</a>
-			</section>
-		</div>
-	</main>
-
+    <header>
+        <a href="index.html" class="brand">Friends (1994)</a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="animated flash">Easter Eggs using Puppeteer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="index-banner" class="index-banner">
+            <div>
+                <h2 class="animated swing">Click Below to View Scripts</h2>
+            </div>
+        </section>
+        <div class="index-links">
+            <a href="joey.js" class="index-box-square animated fadeIn"><h3>Joey</h3></a>
+            <a href="chandler.js" class="index-box-square animated fadeIn"><h3>Chandler</h3></a>
+            <a href="ross.js" class="index-box-square animated fadeIn"><h3>Ross</h3></a>
+            <a href="rachel.js" class="index-box-square animated fadeIn"><h3>Rachel</h3></a>
+            <a href="monica.js" class="index-box-square animated fadeIn"><h3>Monica</h3></a>
+            <a href="phoebe.js" class="index-box-square animated fadeIn"><h3>Phoebe</h3></a>
+        </div>
+    </main>
 </body>
-
 </html>

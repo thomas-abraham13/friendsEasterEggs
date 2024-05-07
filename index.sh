@@ -2,7 +2,7 @@
 
 # CLI to execute the various Puppeteer scripts
 
-clear;
+clear
 echo "----------------------------------------------------------------------------------------"
 echo "                                FRIENDS EASTER EGGS"
 echo "----------------------------------------------------------------------------------------"
@@ -15,65 +15,21 @@ echo "5. Phoebe"
 echo "6. Monica"
 echo "7. Exit CLI"
 echo ""
-echo -n "Your Choice : "
-read FRND
+
+read -p "Your Choice : " FRND
 echo ""
 
-if [ $FRND -gt 0 ] && [ $FRND -le 7 ]; then
-    echo -n "You have chosen $FRND which is "
-    case $FRND in
-        1)
-        echo "Joey"
-        echo ""
-        node joey.js
-        ;;
+case $FRND in
+    1) FRIEND="Joey" ;;
+    2) FRIEND="Chandler" ;;
+    3) FRIEND="Ross" ;;
+    4) FRIEND="Rachel" ;;
+    5) FRIEND="Phoebe" ;;
+    6) FRIEND="Monica" ;;
+    7) echo "Exit Application"; echo ""; exit 1 ;;
+    *) echo "Invalid Input"; echo ""; sleep 2; ./index.sh ;;
+esac
 
-        2)
-        echo "Chandler"
-        echo ""
-        node chandler.js
-        ;;
-
-        3)
-        echo "Ross"
-        echo ""
-        node ross.js
-        ;;
-
-        4)
-        echo "Rachel"
-        echo ""
-        node rachel.js
-        ;;
-
-        5)
-        echo "Phoebe"
-        echo ""
-        node phoebe.js
-        ;;
-
-        6)
-        echo "Monica"
-        echo ""
-        node monica.js
-        ;;
-
-        7)
-        echo "Exit Application"
-        echo ""
-        exit 1
-        ;;
-
-        *)
-        cho ""
-        echo "Error Please Start Again"
-        echo ""
-        ;;
-    esac
-else
-    echo ""
-    echo "Invalid Input"
-    echo ""
-    sleep 2
-    ./index.sh
-fi
+echo "You have chosen $FRND which is $FRIEND"
+echo ""
+node "${FRIEND,,}.js"

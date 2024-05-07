@@ -1,34 +1,21 @@
-// Script Name: Monica Easter Egg
-
 const puppeteer = require('puppeteer');
 
-// JavaScript delay function example
-function delay(time) {
-	return new Promise(function(resolve) {
-		setTimeout(resolve, time)
-	});
-}
-
 (async () => {
-	const browser = await puppeteer.launch({ headless: false, defaultViewport: { width: 1920, height: 1080 }, args: ['--start-maximized'] });
-	const page = await browser.newPage();
-	let element, formElement, tabs;
+    const browser = await puppeteer.launch({ headless: false, defaultViewport: { width: 1920, height: 1080 }, args: ['--start-maximized'] });
+    const page = await browser.newPage();
 
-	// Navigate to Monica Geller on Google
-	await page.goto(`https://www.google.com/search?q=monica+geller`, { waitUntil: 'networkidle0' });
+    // Navigate to Monica Geller on Google
+    await page.goto('https://www.google.com/search?q=monica+geller', { waitUntil: 'networkidle0' });
 
     // Click Accept on the Google Popup (Before you continue....)
-    let accept = `#L2AGLb > div`;
-    await page.click(accept);
+    await page.click('#L2AGLb > div');
 
     // Click the bucket icon to initiate the easter egg
-	let cb = `#rcnt > div.XqFnDf > div > div > div.wPNfjb > div > div.hHq9Z > div > div > div.qlJdOe > div > div > div:nth-child(1) > canvas`;
-	await page.click(cb);
+    await page.click('#rcnt > div.XqFnDf > div > div > div.wPNfjb > div > div.hHq9Z > div > div > div.qlJdOe > div > div > div:nth-child(1) > canvas');
 
-	console.log("Waiting for 5 seconds");
-	await delay(5000);
-	console.log("Waiting for 5 seconds : SUCCESS\n");
+    console.log("Waiting for 5 seconds");
+    await page.waitForTimeout(5000); // Equivalent to delay function
+    console.log("Waiting for 5 seconds : SUCCESS\n");
 
-	await browser.close();
-
+    await browser.close();
 })();
